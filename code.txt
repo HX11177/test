@@ -1,0 +1,16 @@
+Imports System.Windows.Forms
+Imports System.Drawing
+Imports System.Drawing.Imaging
+Imports System.Threading
+
+Module Module读取图片
+    Public Function 读取图片(ByVal path As String)
+
+        Dim bs As Byte() = System.IO.File.ReadAllBytes(path)
+        Dim mybitmap = System.Drawing.Image.FromStream(New System.IO.MemoryStream(bs))
+
+        Return mybitmap
+        mybitmap.Dispose()
+    End Function
+
+End Module
